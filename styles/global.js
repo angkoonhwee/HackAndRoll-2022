@@ -68,4 +68,9 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: "#fff",
     flex: 1,
   },
+  p: {
+    fontSize: 16,
+    marginBottom: 10,
+    color: "grey",
+  },
 });

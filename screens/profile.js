@@ -1,11 +1,21 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { globalStyles } from "../styles/global";
 
-export default function Profile() {
+export default function Profile({ navigation }) {
+  const submitLogout = () => {
+    navigation.navigate("Signup");
+  };
   return (
-    <View style={globalStyles.container}>
-      <Text style={globalStyles.titleText}>Profile Screen</Text>
+    <View style={globalStyles.signupLoginContainer}>
+      <Text style={globalStyles.titleText}>Username</Text>
+      <Text style={globalStyles.p}>Email</Text>
+      <TouchableOpacity
+        style={globalStyles.btnContainer}
+        onPress={submitLogout}
+      >
+        <Text style={globalStyles.btnText}>LOGOUT</Text>
+      </TouchableOpacity>
     </View>
   );
 }
