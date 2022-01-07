@@ -20,11 +20,13 @@ export default function Buddy() {
 const styles = StyleSheet.create({
   buddyContainer: {
     padding: 20,
-    // backgroundColor: "coral",
+    // backgroundColor: "rgba(239,253,255,.87)",
     flex: 1,
+
     // paddingTop: 5,
   },
   buddyWrapper: {
     flex: 1,
+    // backgroundColor: "rgba(239,253,255,.87)",
   },
 });
