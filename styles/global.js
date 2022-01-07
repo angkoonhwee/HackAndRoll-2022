@@ -70,7 +70,7 @@ export const globalStyles = StyleSheet.create({
   },
   p: {
     fontSize: 16,
-    marginBottom: 10,
+    marginBottom: 16,
     color: "grey",
   },
 });

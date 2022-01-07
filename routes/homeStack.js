@@ -15,6 +15,13 @@ export default function HomeStack() {
     <Tab.Navigator
       initialRouteName="Todo"
       screenOptions={({ route }) => ({
+        headerStyle: {
+          backgroundColor: "#489fb5",
+        },
+        headerTitleStyle: {
+          color: "#fff",
+        },
+        headerTitleAlign: "center",
         tabBarActiveTintColor: "#489fb5",
         tabBarInactiveTintColor: "gray",
         tabBarStyle: {

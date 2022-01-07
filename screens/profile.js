@@ -8,8 +8,8 @@ export default function Profile({ navigation }) {
   };
   return (
     <View style={globalStyles.signupLoginContainer}>
-      <Text style={globalStyles.titleText}>Username</Text>
-      <Text style={globalStyles.p}>Email</Text>
+      <Text style={globalStyles.titleText}>GodCloud</Text>
+      <Text style={globalStyles.p}>godcloud@gmail.com</Text>
       <TouchableOpacity
         style={globalStyles.btnContainer}
         onPress={submitLogout}

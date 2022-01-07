@@ -37,12 +37,11 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
   },
   todoTitle: {
-    fontSize: 24,
-    marginVertical: 15,
+    fontSize: 20,
+    marginVertical: 8,
     textAlign: "center",
     fontWeight: "600",
     color: "#1f788a",
@@ -51,12 +50,10 @@ const styles = StyleSheet.create({
     width: "50%",
     backgroundColor: "rgba(239,253,255,.87)",
     marginHorizontal: "25%",
-    // height: 2,
-    // paddingVertical: 6,
     borderWidth: 1,
-    // borderBottomWidth: 5,
     borderColor: "#489fb5",
     borderStyle: "dotted",
+    marginBottom: 12,
   },
 });
 

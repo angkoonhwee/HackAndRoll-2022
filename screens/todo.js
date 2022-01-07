@@ -65,7 +65,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   content: {
-    padding: 40,
+    padding: 20,
+    paddingTop: 5,
     flex: 1,
   },
 });

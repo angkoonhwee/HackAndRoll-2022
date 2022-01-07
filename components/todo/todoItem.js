@@ -28,8 +28,13 @@ export default function TodoItem({ handlePress, item, isBuddy }) {
 
   const buddyTodos = () => {
     return (
-      <View style={styles.checkboxWrapper}>
-        <Ionicons name="ios-pin" size={22} color={isLate ? "red" : "#1f788a"} />
+      <View style={styles.checkboxWrapperBuddy}>
+        <Ionicons
+          name="ios-pin"
+          size={22}
+          color={isLate ? "red" : "#1f788a"}
+          style={{ marginLeft: 9, marginRight: 7 }}
+        />
         <Text style={isDone ? styles.itemTextChecked : styles.itemText}>
           {item.text + ` (by ${item.date})`}
         </Text>
@@ -55,32 +60,41 @@ export default function TodoItem({ handlePress, item, isBuddy }) {
 
 const styles = StyleSheet.create({
   item: {
-    padding: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 5,
     // marginTop: 16,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
   },
   itemText: {
-    marginLeft: 10,
+    marginLeft: 3,
     color: "#1f788a",
-    width: "90%",
+    // width: "80%",
   },
   itemTextChecked: {
-    marginLeft: 10,
+    marginLeft: 3,
     color: "#1f788a",
     textDecorationLine: "line-through",
-    width: "90%",
+    // width: "80%",
   },
   checkboxWrapper: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
+    width: "88%",
+  },
+  checkboxWrapperBuddy: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    paddingVertical: 5,
+    width: "100%",
   },
   deleteWrapper: {
     minWidth: 41,
-    minHeight: 41,
+    // minHeight: 41,
     maxWidth: 42,
-    maxHeight: 42,
+    // maxHeight: 42,
   },
 });

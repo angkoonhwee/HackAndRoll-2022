@@ -60,7 +60,9 @@ export default function AddTodo({ handleSubmit }) {
       </View>
 
       <TouchableOpacity style={styles.addBtn} onPress={handlePress}>
-        <Text style={{ color: "#fff", fontSize: 20 }}>+</Text>
+        <Text style={{ color: "#fff", fontSize: 20, fontWeight: "800" }}>
+          +
+        </Text>
       </TouchableOpacity>
 
       {/* <Button color="coral" onPress={pressHandler} title="add todo" /> */}
@@ -71,13 +73,15 @@ export default function AddTodo({ handleSubmit }) {
 const styles = StyleSheet.create({
   addTodoContainer: {
     flexDirection: "row",
-    width: "100%",
+    width: "95%",
     justifyContent: "space-evenly",
+    alignItems: "center",
+    alignSelf: "center",
   },
   input: {
-    marginBottom: 10,
     paddingHorizontal: 8,
-    paddingVertical: 6,
+    paddingBottom: 6,
+    paddingTop: 20,
     borderBottomWidth: 1,
     borderBottomColor: "#489fb5",
     width: "100%",
@@ -99,8 +103,8 @@ const styles = StyleSheet.create({
   },
   ddlText: {
     position: "absolute",
-    left: 0,
-    top: 4,
+    left: 8,
+    top: 9,
     marginLeft: 0,
     color: "#1f788a",
   },
