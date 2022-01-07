@@ -25,23 +25,6 @@ export default function HomeStack() {
       })}
     >
       <Tab.Screen
-        name="Auth"
-        component={Login}
-        options={{
-          tabBarIcon: ({ focused, color, size }) => (
-            <Ionicons
-              name={
-                focused
-                  ? "ios-information-circle"
-                  : "ios-information-circle-outline"
-              }
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
         name="Todo"
         component={Todo}
         options={{
