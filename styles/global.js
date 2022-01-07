@@ -73,4 +73,7 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 16,
     color: "grey",
   },
+  container: {
+    backgroundColor: "#fff",
+  },
 });

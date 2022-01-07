@@ -6,7 +6,7 @@ import { globalStyles } from "../styles/global";
 export default function Notifications() {
   //
   return (
-    <View style={globalStyles.container}>
+    <View style={{ backgroundColor: "#fff", flex: 1 }}>
       <NotifItem />
     </View>
   );
