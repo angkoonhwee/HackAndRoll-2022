@@ -27,10 +27,10 @@ export default function Todo() {
     });
   };
 
-  const handleSubmit = (text) => {
+  const handleSubmit = (text, date) => {
     // if (text.length > 3) {
     setTodos((prevTodos) => {
-      return [{ text, key: Math.random().toString() }, ...prevTodos];
+      return [{ text, key: Math.random().toString(), date }, ...prevTodos];
     });
     // } else {
     //   Alert.alert("OOPS", "Todo must be over 3 characters long", [

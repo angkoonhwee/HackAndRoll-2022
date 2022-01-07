@@ -18,8 +18,9 @@ export default function AddTodo({ handleSubmit }) {
   };
 
   const handlePress = () => {
-    handleSubmit(text);
+    handleSubmit(text, date);
     setText("");
+    setDate(new Date());
   };
 
   return (
@@ -27,12 +28,14 @@ export default function AddTodo({ handleSubmit }) {
       <View style={{ width: "88%" }}>
         <TextInput
           style={styles.input}
+          placeholderTextColor="#1f788a"
           placeholder="New todo..."
           onChangeText={changeHandler}
           value={text}
         />
         <DatePicker
           style={styles.datepicker}
+          iconComponent={<Text style={styles.ddlText}>By: </Text>}
           date={date}
           mode="date"
           placeholder="Select Deadline"
@@ -41,20 +44,18 @@ export default function AddTodo({ handleSubmit }) {
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
           customStyles={{
-            dateIcon: {
-              position: "absolute",
-              left: 0,
-              top: 4,
-              marginLeft: 0,
-            },
             dateInput: {
               marginLeft: 36,
+              borderWidth: 0,
+            },
+            dateText: {
+              color: "#1f788a",
+            },
+            btnTextConfirm: {
+              color: "#1f788a",
             },
           }}
-          onDateChange={(date) => {
-            console.warn(date);
-            setDate(date);
-          }}
+          onDateChange={(date) => setDate(date)}
         />
       </View>
 
@@ -95,6 +96,12 @@ const styles = StyleSheet.create({
   },
   datepicker: {
     width: "100%",
+  },
+  ddlText: {
+    position: "absolute",
+    left: 0,
+    top: 4,
+    marginLeft: 0,
     color: "#1f788a",
   },
 });
