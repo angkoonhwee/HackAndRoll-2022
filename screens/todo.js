@@ -11,22 +11,23 @@ import {
 } from "react-native";
 import AddTodo from "../components/todo/addTodo";
 import TodoItem from "../components/todo/todoItem";
+import TodoList from "../components/todo/todoList";
 import { globalStyles } from "../styles/global";
 
 export default function Todo() {
   const [todos, setTodos] = useState([
-    { text: "buy coffee", key: "1" },
-    { text: "create an app", key: "2" },
-    { text: "play on the switch", key: "3" },
+    { text: "buy coffee", key: "1", date: "09 Jan 2022" },
+    { text: "create an app", key: "2", date: "09 Jan 2022" },
+    { text: "play on the switch", key: "3", date: "09 Jan 2022" },
   ]);
 
-  const pressHandler = (key) => {
+  const handlePress = (key) => {
     setTodos((prevTodos) => {
       return prevTodos.filter((todo) => todo.key != key);
     });
   };
 
-  const submitHandler = (text) => {
+  const handleSubmit = (text) => {
     // if (text.length > 3) {
     setTodos((prevTodos) => {
       return [{ text, key: Math.random().toString() }, ...prevTodos];
@@ -48,12 +49,9 @@ export default function Todo() {
       >
         <View style={styles.container}>
           <View style={styles.content}>
-            <AddTodo submitHandler={submitHandler} />
-            <View style={styles.list}>
-              {todos.map((item, i) => (
-                <TodoItem item={item} pressHandler={pressHandler} key={i} />
-              ))}
-            </View>
+            <AddTodo handleSubmit={handleSubmit} />
+            <TodoList todos={todos} handlePress={handlePress} isBuddy={false} />
+            <TodoList todos={todos} handlePress={handlePress} isBuddy={true} />
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -68,10 +66,6 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 40,
-    flex: 1,
-  },
-  list: {
-    marginVertical: 15,
     flex: 1,
   },
 });

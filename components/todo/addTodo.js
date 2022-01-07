@@ -7,30 +7,61 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
+import DatePicker from "react-native-datepicker";
 
-export default function AddTodo({ submitHandler }) {
+export default function AddTodo({ handleSubmit }) {
   const [text, setText] = useState("");
+  const [date, setDate] = useState(new Date());
 
   const changeHandler = (val) => {
     setText(val);
   };
 
-  const pressHandler = () => {
-    submitHandler(text);
+  const handlePress = () => {
+    handleSubmit(text);
     setText("");
   };
 
   return (
     <View style={styles.addTodoContainer}>
-      <TextInput
-        style={styles.input}
-        placeholder="New todo..."
-        onChangeText={changeHandler}
-        value={text}
-      />
-      <TouchableOpacity style={styles.addBtn} onPress={pressHandler}>
+      <View style={{ width: "88%" }}>
+        <TextInput
+          style={styles.input}
+          placeholder="New todo..."
+          onChangeText={changeHandler}
+          value={text}
+        />
+        <DatePicker
+          style={styles.datepicker}
+          date={date}
+          mode="date"
+          placeholder="Select Deadline"
+          format="DD MMM YYYY"
+          minDate="01 Jan 2022"
+          confirmBtnText="Confirm"
+          cancelBtnText="Cancel"
+          customStyles={{
+            dateIcon: {
+              position: "absolute",
+              left: 0,
+              top: 4,
+              marginLeft: 0,
+            },
+            dateInput: {
+              marginLeft: 36,
+            },
+          }}
+          onDateChange={(date) => {
+            console.warn(date);
+            setDate(date);
+          }}
+        />
+      </View>
+
+      <TouchableOpacity style={styles.addBtn} onPress={handlePress}>
         <Text style={{ color: "#fff", fontSize: 20 }}>+</Text>
       </TouchableOpacity>
+
       {/* <Button color="coral" onPress={pressHandler} title="add todo" /> */}
     </View>
   );
@@ -40,6 +71,7 @@ const styles = StyleSheet.create({
   addTodoContainer: {
     flexDirection: "row",
     width: "100%",
+    justifyContent: "space-evenly",
   },
   input: {
     marginBottom: 10,
@@ -47,7 +79,7 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderBottomWidth: 1,
     borderBottomColor: "#489fb5",
-    width: "88%",
+    width: "100%",
     color: "#1f788a",
   },
   addBtn: {
@@ -60,5 +92,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginLeft: 10,
+  },
+  datepicker: {
+    width: "100%",
+    color: "#1f788a",
   },
 });
