@@ -64,8 +64,6 @@ export default function AddTodo({ handleSubmit }) {
           +
         </Text>
       </TouchableOpacity>
-
-      {/* <Button color="coral" onPress={pressHandler} title="add todo" /> */}
     </View>
   );
 }

@@ -1,12 +1,30 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
+import BuddyMsg from "../components/buddy/buddyMsg";
+import MsgInput from "../components/buddy/msgInput";
 import { globalStyles } from "../styles/global";
 
 export default function Buddy() {
   //
   return (
-    <View style={globalStyles.container}>
-      <Text style={globalStyles.titleText}>Buddy Screen</Text>
+    <View style={styles.buddyWrapper}>
+      <ScrollView style={styles.buddyContainer}>
+        <BuddyMsg isBuddy={false} message={"Wo ist du?"} />
+        <BuddyMsg isBuddy={true} message={"Ich bin unterwegs."} />
+      </ScrollView>
+      <MsgInput />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  buddyContainer: {
+    padding: 20,
+    // backgroundColor: "coral",
+    flex: 1,
+    // paddingTop: 5,
+  },
+  buddyWrapper: {
+    flex: 1,
+  },
+});

@@ -47,12 +47,10 @@ export default function Todo() {
           console.log("dismissed");
         }}
       >
-        <View style={styles.container}>
-          <View style={styles.content}>
-            <AddTodo handleSubmit={handleSubmit} />
-            <TodoList todos={todos} handlePress={handlePress} isBuddy={false} />
-            <TodoList todos={todos} handlePress={handlePress} isBuddy={true} />
-          </View>
+        <View style={styles.content}>
+          <AddTodo handleSubmit={handleSubmit} />
+          <TodoList todos={todos} handlePress={handlePress} isBuddy={false} />
+          <TodoList todos={todos} handlePress={handlePress} isBuddy={true} />
         </View>
       </TouchableWithoutFeedback>
     </ScrollView>
@@ -60,10 +58,6 @@ export default function Todo() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
   content: {
     padding: 20,
     paddingTop: 5,
