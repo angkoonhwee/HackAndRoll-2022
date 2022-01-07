@@ -63,4 +63,9 @@ export const globalStyles = StyleSheet.create({
     paddingHorizontal: "3%",
     marginBottom: 10,
   },
+  // TODO
+  todoContainer: {
+    backgroundColor: "#fff",
+    flex: 1,
+  },
 });

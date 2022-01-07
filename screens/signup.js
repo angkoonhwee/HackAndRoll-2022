@@ -22,7 +22,7 @@ export default function Signup({ navigation }) {
 
   const submitSignup = () => {
     // console.warn("sign up");
-    navigation.navigate("Home");
+    navigation.navigate("Home", { screen: "Todo" });
     // let isValidEmail = validator.isEmail(signupEmail);
     // if (!isValidEmail) {
     //   Alert.alert("Invalid Email", "Please enter a valid email.");
